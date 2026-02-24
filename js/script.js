@@ -1,8 +1,7 @@
-// ================= ARRAY =================
+
 let interviewList = [];
 let rejectedList = [];
 
-// ================= SELECTORS =================
 const total = document.getElementById('totalcount');
 const Interviewcount = document.getElementById('Interviewcount');
 const rejectedCount = document.getElementById('rejectedCount');
@@ -15,11 +14,11 @@ const allFilterBtn = document.getElementById('All-filter-btn');
 const interviewFilterBtn = document.getElementById('Interview-filter-btn');
 const rejectedFilterBtn = document.getElementById('Rejected-filter-btn');
 
-const filterSection = document.createElement('section'); // dynamic section for message
+const filterSection = document.createElement('section'); 
 filterSection.className = 'space-y-6';
 allCardSection.parentNode.insertBefore(filterSection, allCardSection.nextSibling);
 
-// ================= INITIAL COUNT =================
+
 function calculateCount(currentTab = 'All') {
     const allCards = allCardSection.querySelectorAll('.card');
     total.innerText = allCards.length;
@@ -35,7 +34,7 @@ function calculateCount(currentTab = 'All') {
 }
 calculateCount();
 
-// ================= TAB FUNCTIONS =================
+
 function toggleStyle(id) {
     allFilterBtn.classList.remove('bg-[#3B82F6]', 'text-white');
     interviewFilterBtn.classList.remove('bg-[#3B82F6]', 'text-white');
@@ -100,7 +99,7 @@ function toggleStyle(id) {
     }
 }
 
-// ================= EVENT DELEGATION =================
+
 mainContainer.addEventListener('click', function (event) {
     const card = event.target.closest('.card');
     if (!card) return;
@@ -108,7 +107,7 @@ mainContainer.addEventListener('click', function (event) {
     const statusLabel = card.querySelector('.light');
     const companyName = card.querySelector('.boxTitle')?.innerText;
 
-    // ===== INTERVIEW =====
+   
     if (event.target.classList.contains('Interview-btn')) {
         if (!interviewList.includes(companyName)) interviewList.push(companyName);
         rejectedList = rejectedList.filter(item => item !== companyName);
@@ -117,10 +116,10 @@ mainContainer.addEventListener('click', function (event) {
         statusLabel?.classList.remove('bg-gray-200', 'bg-red-500', 'text-red-500');
         statusLabel?.classList.add('bg-green-500', 'text-white');
 
-        toggleStyle('All-filter-btn'); // Show All tab after click
+        toggleStyle('All-filter-btn'); 
     }
 
-    // ===== REJECTED =====
+  
     if (event.target.classList.contains('rejected-btn')) {
         if (!rejectedList.includes(companyName)) rejectedList.push(companyName);
         interviewList = interviewList.filter(item => item !== companyName);
@@ -129,10 +128,10 @@ mainContainer.addEventListener('click', function (event) {
         statusLabel?.classList.remove('bg-gray-200', 'bg-green-500', 'text-green-500');
         statusLabel?.classList.add('bg-red-500', 'text-white');
 
-        toggleStyle('All-filter-btn'); // Show All tab after click
+        toggleStyle('All-filter-btn'); 
     }
 
-    // ===== DELETE =====
+   
     if (event.target.classList.contains('fa-trash-can')) {
         interviewList = interviewList.filter(item => item !== companyName);
         rejectedList = rejectedList.filter(item => item !== companyName);
