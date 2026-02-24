@@ -15,6 +15,10 @@ const allFilterBtn = document.getElementById('All-filter-btn');
 const interviewFilterBtn = document.getElementById('Interview-filter-btn');
 const rejectedFilterBtn = document.getElementById('Rejected-filter-btn');
 
+const filterSection = document.createElement('section'); // dynamic section for message
+filterSection.className = 'space-y-6';
+allCardSection.parentNode.insertBefore(filterSection, allCardSection.nextSibling);
+
 // ================= INITIAL COUNT =================
 function calculateCount(currentTab = 'All') {
     const allCards = allCardSection.querySelectorAll('.card');
@@ -49,20 +53,49 @@ function toggleStyle(id) {
 
     if (id === 'All-filter-btn') {
         cards.forEach(c => c.classList.remove('hidden'));
+        filterSection.innerHTML = '';
         calculateCount('All');
     } 
     else if (id === 'Interview-filter-btn') {
-        cards.forEach(c => {
+        const filteredCards = Array.from(cards).filter(c => {
             const status = c.querySelector('.light')?.innerText;
-            c.classList.toggle('hidden', status !== 'Interview');
+            const show = status === 'Interview';
+            c.classList.toggle('hidden', !show);
+            return show;
         });
+
+        if (filteredCards.length === 0) {
+            filterSection.innerHTML = `
+                <div class="text-center py-10">
+                    <p class="text-2xl font-bold">No Jobs Available</p>
+                    <p class="text-gray-500">You have not selected any Interview jobs yet.</p>
+                </div>
+            `;
+        } else {
+            filterSection.innerHTML = '';
+        }
+
         calculateCount('Other');
     } 
     else if (id === 'Rejected-filter-btn') {
-        cards.forEach(c => {
+        const filteredCards = Array.from(cards).filter(c => {
             const status = c.querySelector('.light')?.innerText;
-            c.classList.toggle('hidden', status !== 'Rejected');
+            const show = status === 'Rejected';
+            c.classList.toggle('hidden', !show);
+            return show;
         });
+
+        if (filteredCards.length === 0) {
+            filterSection.innerHTML = `
+                <div class="text-center py-10">
+                    <p class="text-2xl font-bold">No Jobs Available</p>
+                    <p class="text-gray-500">You have not selected any Rejected jobs yet.</p>
+                </div>
+            `;
+        } else {
+            filterSection.innerHTML = '';
+        }
+
         calculateCount('Other');
     }
 }
