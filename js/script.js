@@ -36,16 +36,16 @@ calculateCount();
 
 
 function toggleStyle(id) {
-    allFilterBtn.classList.remove('bg-[#3B82F6]', 'text-white');
+      allFilterBtn.classList.remove('bg-[#3B82F6]', 'text-white');
     interviewFilterBtn.classList.remove('bg-[#3B82F6]', 'text-white');
     rejectedFilterBtn.classList.remove('bg-[#3B82F6]', 'text-white');
 
-    allFilterBtn.classList.add('bg-gray-300');
-    interviewFilterBtn.classList.add('bg-gray-300');
-    rejectedFilterBtn.classList.add('bg-gray-300');
+    allFilterBtn.classList.add('bg-gray-100');
+    interviewFilterBtn.classList.add('bg-gray-100');
+    rejectedFilterBtn.classList.add('bg-gray-100');
 
     const selectedBtn = document.getElementById(id);
-    selectedBtn.classList.remove('bg-gray-300');
+    selectedBtn.classList.remove('bg-gray-100');
     selectedBtn.classList.add('bg-[#3B82F6]', 'text-white');
 
     const cards = allCardSection.querySelectorAll('.card');

@@ -15,17 +15,17 @@
  <header class="w-[80%] mx-auto ">
   <h1 class="text-3xl font-bold mb-5 pt-5">Job Application Tracker</h1>
   <div class=" grid grid-cols-3 gap-8">
-    <div class=" bg-[#FFFFFF] p-4">
+    <div class=" bg-[#FFFFFF] p-4 border-2 border-gray-200 rounded-sm">
       <p>total</p>
       <p id="totalcount">0</p>
     </div>
 
-     <div class="bg-[#FFFFFF] p-4 ">
+     <div class="bg-[#FFFFFF] p-4 border-2 border-gray-200 rounded-sm ">
       <p>Interview</p>
       <p id="Interviewcount" class="text-green-500 font-bold">0</p>
      </div>
 
-      <div class=" bg-[#FFFFFF] p-4">
+      <div class=" bg-[#FFFFFF] p-4 border-2 border-gray-200 rounded-sm">
         <p>Rejected</p>
       <p id="rejectedCount" class="text-red-500 font-bold">0</p>
       </div>
@@ -41,9 +41,11 @@
     <h2 class="mb-6">Available Jobs</h2>
     <p class="job-count">8 jobs</p> 
 </div>
-    <button onclick="toggleStyle('All-filter-btn')" class="bg-[#3B82F6] text-white px-5 py-2" id="All-filter-btn">All</button>
-    <button onclick="toggleStyle('Interview-filter-btn')" class="bg-gray-300 px-5 py-2" id="Interview-filter-btn">Interview</button>
-    <button onclick="toggleStyle('Rejected-filter-btn')" class="bg-gray-300 px-5 py-2" id="Rejected-filter-btn">Rejected</button>
+<div class="flex gap-2">
+     <button onclick="toggleStyle('All-filter-btn')" class="bg-[#3B82F6] text-white px-5 py-2 border-2 border-gray-300 rounded-sm " id="All-filter-btn">All</button>
+    <button onclick="toggleStyle('Interview-filter-btn')" class="bg-gray-100 px-5 py-2 border-2 border-gray-300 rounded-sm" id="Interview-filter-btn">Interview</button>
+    <button onclick="toggleStyle('Rejected-filter-btn')" class="bg-gray-100 px-5 py-2 border-2 border-gray-300 rounded-sm" id="Rejected-filter-btn">Rejected</button>
+</div>
   </div>
 
 
@@ -84,7 +86,11 @@
 
 
       <div>
-        <span><i class="fa-solid fa-trash-can"></i></span>
+
+       
+         <button class="w-10 h-10 flex items-center justify-center bg-white border border-gray-400 text-gray-400k rounded-full">
+  <i class="fa-solid fa-trash-can"></i>
+</button>
        
       </div>
      </div>
@@ -127,7 +133,9 @@
       </div>
 
       <div>
-      <span><i class="fa-solid fa-trash-can"></i></span>
+           <button class="w-10 h-10 flex items-center justify-center bg-white border border-gray-400 text-gray-400k rounded-full">
+  <i class="fa-solid fa-trash-can"></i>
+</button>
       </div>
      </div>
 
@@ -173,7 +181,9 @@
       </div>
 
       <div>
-      <span><i class="fa-solid fa-trash-can"></i></span>
+          <button class="w-10 h-10 flex items-center justify-center bg-white border border-gray-400 text-gray-400k rounded-full">
+  <i class="fa-solid fa-trash-can"></i>
+</button>
       </div>
      </div>
      
@@ -221,7 +231,9 @@
 
 >
       <div>
-      <span><i class="fa-solid fa-trash-can"></i></span>
+            <button class="w-10 h-10 flex items-center justify-center bg-white border border-gray-400 text-gray-400k rounded-full">
+  <i class="fa-solid fa-trash-can"></i>
+</button>
       </div>
      </div>
       
@@ -272,7 +284,7 @@
 
       
       <div>
-      <span><i class="fa-solid fa-trash-can"></i></span>
+     
       </div>
      </div>
 
@@ -323,7 +335,9 @@
 
       
       <div>
-      <span><i class="fa-solid fa-trash-can"></i></span>
+             <button class="w-10 h-10 flex items-center justify-center bg-white border border-gray-400 text-gray-400k rounded-full">
+  <i class="fa-solid fa-trash-can"></i>
+</button>
       </div>
      </div>
 
@@ -370,7 +384,9 @@
 
       
       <div>
-      <span><i class="fa-solid fa-trash-can"></i></span>
+             <button class="w-10 h-10 flex items-center justify-center bg-white border border-gray-400 text-gray-400k rounded-full">
+  <i class="fa-solid fa-trash-can"></i>
+</button>
       </div>
      </div>
 
@@ -420,7 +436,9 @@
 
      
       <div>
-      <span><i class="fa-solid fa-trash-can"></i></span>
+             <button class="w-10 h-10 flex items-center justify-center bg-white border border-gray-400 text-gray-400k rounded-full">
+  <i class="fa-solid fa-trash-can"></i>
+</button>
       </div>
      </div>
       
